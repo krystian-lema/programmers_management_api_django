@@ -9,6 +9,7 @@ router.register('teams', views.ListTeamView)
 router.register('programmers', views.ListProgrammerView)
 router.register('languages', views.ListLanguageView)
 router.register('paradigms', views.ListParadigmView)
+router.register('teams_include_all_data', views.ListTeamIncludeAllDataView)
 
 urlpatterns = [
     path('', include(router.urls)),

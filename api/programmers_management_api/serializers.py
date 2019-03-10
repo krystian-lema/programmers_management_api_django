@@ -4,7 +4,7 @@ from .models import Team, Programmer, Language, Paradigm
 class TeamSerializer(serializers.ModelSerializer):
     class Meta:
         model = Team
-        fields = '__all__'
+        fields = ("id", "name", "programmers")
 
 class ProgrammerSerializer(serializers.ModelSerializer):
     class Meta:
@@ -20,3 +20,9 @@ class ParadigmSerializer(serializers.ModelSerializer):
     class Meta:
         model = Paradigm
         fields = '__all__'
+
+class TeamIncludeAllDataSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Team
+        fields = ("id", "name", "programmers")
+        depth = 3

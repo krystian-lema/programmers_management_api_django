@@ -13,6 +13,6 @@ class Language(models.Model):
 class Programmer(models.Model):
     firstname = models.CharField(max_length=40, null=False)
     lastname = models.CharField(max_length=40, null=False)
-    team = models.ForeignKey(Team, on_delete=models.CASCADE)
+    team = models.ForeignKey(Team, related_name='programmers', on_delete=models.CASCADE)
     languages = models.ManyToManyField(Language, blank=True)
 
